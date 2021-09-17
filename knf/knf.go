@@ -47,4 +47,5 @@ type NetworkConf struct {
 	ParticipatingNodes []net.IP `json:"participatingNodes"`
 	MTU                int      `json:"mtu"`
 	NAT                bool     `json:"nat"`
+	GWPort             string   `json:"gwPort"`
 }
