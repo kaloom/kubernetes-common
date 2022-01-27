@@ -30,10 +30,10 @@ const (
 // NetworkConfig is a struct of the Pod's annotations networks element
 // (a json array of NetworkConfig)
 type NetworkConfig struct {
-	NetworkName string `json:"name"`                 // required parameter: the network name for the CRD network resource in k8s
-	IfMAC       string `json:"ifMac,omitempty"`      // optional parameter: the network device mac address in the form of 00:11:22:33:44:55
-	IsPrimary   bool   `json:"isPrimary,omitempty"`  // optional parameter: specify that this network is associated with the primary device in the Pod i.e. eth0
-	UpperLayer  string `json:"upperLayer,omitempty"` // optional parameter: specify an upper layer for this network i.e. a hierarchy in which this network is a lower layer of another network
+	NetworkName string   `json:"name"`                  // required parameter: the network name for the CRD network resource in k8s
+	IfMAC       string   `json:"ifMac,omitempty"`       // optional parameter: the network device mac address in the form of 00:11:22:33:44:55
+	IsPrimary   bool     `json:"isPrimary,omitempty"`   // optional parameter: specify that this network is associated with the primary device in the Pod i.e. eth0
+	UpperLayers []string `json:"upperLayers,omitempty"` // optional parameter: specify the upper layers for this network i.e. a hierarchy in which this network is a lower layer of another network(s)
 }
 
 // GetNetworkIfname from a networkName return a device name by
